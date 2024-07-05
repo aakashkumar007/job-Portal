@@ -1,6 +1,6 @@
 import express from 'express';
 import formidable from 'express-formidable';
-import { createJobController ,getJobController,getSingleJobController } from '../controllers/jobController.js';
+import { createJobController ,getJobController,getSingleJobController,deleteJobController } from '../controllers/jobController.js';
 
 const router=express.Router();
 
@@ -12,4 +12,9 @@ router.get('/get-single-job/:id',getSingleJobController)
 
 //get jobs
 router.get("/get-all-jobs",getJobController)
-export default router
+
+
+//delete job route
+router.delete("/delete-job/id",deleteJobController)
+
+export default router;

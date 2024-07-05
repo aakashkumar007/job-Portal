@@ -29,6 +29,7 @@ app.use(express.json());
 app.use("/api/jobs",jobRoute);
 app.use("/api/test",testRoute);
 
+
 app.get("/",(req,res)=>{
     res.send("Welcome to Server");
 })

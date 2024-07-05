@@ -7,7 +7,7 @@ export const createJobController = async (req, res) => {
         const { jobName, jobDesc, companyName, startDate, endDate,examDate,admitCardDate,genObcFee, scStFee, menMinAge, menMaxAge, womenMinAge, womenMaxAge, numberOfPosts, link,postInfo } = req.body;
         console.log(req.bo);
 
-        const slug = slugify(companyName);
+        const slug = slugify(jobName);
 
         // Construct the job object
         const jobData = {
@@ -65,6 +65,24 @@ export const getJobController=async(req,res)=>{
         res.status(500).send({
             success:false,
             message:"Error in getting job",
+            error
+        })
+    }
+}
+
+export const deleteJobController = async (req,res)=>{
+    try{
+        const jobId=req.params.id;
+        const job=await jobsModel.findByIdAndDelete(jobId);
+        res.status(200).send({
+            success:true,
+            message:"Job deleted successfully", 
+        })
+    }catch(error){
+        console.log(error);
+        res.status(500).send({
+            success:false,
+            message:"Error in deleting job",
             error
         })
     }

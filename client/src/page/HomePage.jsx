@@ -24,7 +24,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h1 className='text-center font-bold text-white rounded bg-green-700 animate-bounce p-2 m-3'>Currently We are on Development</h1>
+      <h1 className='text-center font-bold text-white rounded bg-green-700 animate-bounce p-2 m-3'>Currently We are under Development</h1>
       <h1 className='text-3xl text-white bg-yellow-800 p-2 flex '> <FaSearch className='m-1 pr-2' />Job Finder</h1>
       <div className='bg-green-700 text-white p-2'>
         <nav className="flex justify-around overflow-x-auto">
